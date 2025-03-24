@@ -1,6 +1,45 @@
 const farmAnimals = 'cow horse sheep pig chicken';
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const animalSounds = {
+  moo: 'cow', 
+  neigh: 'horse', 
+  baa: 'sheep', 
+  oink: 'pig', 
+  cluck: 'chicken' 
+ }
+
+ const{moo, neigh, baa, oink, cluck } = animalSounds
+
+console.log(moo, neigh, baa, oink, cluck )
+
+
+const animals = {
+  bessie: 'cow',
+  dolly: 'sheep',
+  babe: 'pig',
+  little: 'chicken'
+}
+
+
+const{bessie, dolly, babe, little} = animals
+console.log(bessie, dolly, babe, little)
+
+const animalColors = {
+  blackAndWhite: 'cow',
+  black: 'sheep',
+  pink: 'pig',
+}
+
+const{blackAndWhite, black, pink} = animalColors
+console.log(blackAndWhite, black, pink)
+
+const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+const [red, orange, yellow, green, blue, indigo, violet] = rainbowColors;
+const [r, o, y, g, b, indg, v] = rainbowColors
+
+console.log(red, orange, yellow, green, blue, indigo, violet);
+console.log(r, o, y, g, b, v)
+
 
 const muppet = {
   muppetName: 'Miss Piggy',
@@ -9,6 +48,9 @@ const muppet = {
   job: 'Cast member of The Muppet Show',
   partner: 'Kermit'
 };
+
+// ✅ Destructure job, partner, and other values correctly
+const { muppetName, color, song, job, partner } = muppet;
 
 const nestedMuppet = {
   nestedName: 'Kermit',
@@ -24,6 +66,19 @@ const nestedMuppet = {
   nestedJob: 'Host of The Muppet Show',
   nestedPartner: 'Miss Piggy'
 };
+
+// ✅ Destructure nestedJob and nestedPartner
+const { nestedJob, nestedPartner } = nestedMuppet;
+
+// ✅ Deep destructuring to extract song2 and song4
+const { 
+  album: { 
+    theMuppetMovie: { song2, song4 } 
+  } 
+} = nestedMuppet;
+
+// ✅ Export all required variables
+module.exports = { muppetName, color, song, job, partner, song2, song4, nestedJob, nestedPartner };
 
 // Strings
 
